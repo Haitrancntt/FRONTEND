@@ -1,0 +1,47 @@
+<div id="content">
+  <div id="content_fix">
+    <div id="content_left">
+      <div *ngFor="let item of array">
+
+        <h1>{{item.category}}</h1>
+        <!--*************Content row*****************-->
+        <div id="row_content">
+          <div id="route">Tin tức > {{item.category}}</div>
+          <div id="share">
+            <div id="button_share">
+              <share-buttons></share-buttons>
+            </div>
+          </div>
+          <div id="news_noidung">
+            <div id="news_detail_title">{{item.title}}</div>
+            <div id="news_postdate">{{item.createdate}}</div>
+            <div id="news_des">{{item.shortbrief}}</div>
+            <div id="news_image" [innerHTML]="item.content"></div>
+            <span id="owner">{{item.owner}}</span>
+          </div>
+        </div>
+      </div>
+      <div id="share1">
+        <div id="button-share">
+          <share-buttons></share-buttons>
+        </div>
+      </div>
+      <hr id="last">
+      <div id="news_related">
+        <div id="news_related_header">
+          <h3>Tin liên quan</h3>
+        </div>
+        <div *ngFor="let tin of news" id="news_title">
+          <h3 (click)="Nav(tin._source._id,tin._source.title)">{{tin._source.title}}</h3>
+        </div>
+      </div>
+    </div>
+    <div id="content_right">
+      <menu-second></menu-second>
+      <circle></circle>
+    </div>
+  </div>
+</div>
+<script>
+
+</script>

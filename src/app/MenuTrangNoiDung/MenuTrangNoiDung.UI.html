@@ -1,0 +1,11 @@
+<div id="menu">
+  <div class="menu-item" *ngFor="let danhmuc of danhmuc">
+    <h4 id="menu_h4" (click)="Navigation(danhmuc.link)" routerLink="danhmuc.link">{{danhmuc.name}}</h4>
+    <div id="menu_ul" *ngIf="danhmuc.child!=null">
+      <ul *ngFor="let danhmucnho of danhmuc.child;let i = index" (click)="Navigation(danhmuc.child[i].link)">
+        <li>{{danhmuc.child[i].name}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+

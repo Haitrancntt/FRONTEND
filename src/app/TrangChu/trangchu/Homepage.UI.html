@@ -1,0 +1,63 @@
+<!--SLIDER START-->
+<div id="slider">
+  <div id="slider_fix">
+    <div id="img_slider">
+      <banner-main></banner-main>
+    </div>
+    <!--Social start-->
+    <div id="homepage_social">
+      <div>
+        <h3 class="social_title">Kết nối với Văn Lang</h3>
+      </div>
+      <iframe
+        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftruongdaihocvanlangdvl&tabs=timeline&width=190&height=300&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=474281922910553"
+        width="180" height="272" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+        allowTransparency="true"></iframe>
+    </div>
+    <!--Social end-->
+  </div>
+</div>
+<!--SLIDER END-->
+<div id="content">
+  <div id="content_fix">
+    <!--CONTENT LEFT START-->
+    <div id="content_left">
+      <div id="row_content">
+        <div id="route">Tin tức</div>
+        <div id="news">
+          <news *ngFor="let tintuc of tintucs | paginate: { itemsPerPage: 6, currentPage: p }"
+                [tintuc]="tintuc"></news>
+        </div>
+        <div id="pagination">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+      </div>
+      <div class="connect_mobile">
+        <div class="connect_mobile_title">
+          <h3>Chương trình liên kết</h3>
+        </div>
+        <div class="connect_mobile_image">
+          <ul>
+            <li><img src="../../../Image/banner_cmu.png"></li>
+            <li><img src="../../../Image/banner_cmu.png"></li>
+            <li><img src="../../../Image/banner_cmu.png"></li>
+            <li><img src="../../../Image/banner_cmu.png"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--CONTENT LEFT END-->
+
+    <!--CONTENT RIGHT START-->
+    <div id="content_right">
+      <div>
+        <h3 class="social_title">Chương trình liên kết</h3>
+      </div>
+      <banner-right></banner-right>
+      <circle></circle>
+    </div>
+    <!--CONTENT RIGHT END-->
+  </div>
+</div>
+<!--***********************-->
+

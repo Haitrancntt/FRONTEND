@@ -1,0 +1,29 @@
+<div id="content">
+  <div id="content_fix">
+    <div id="content_left">
+      <h2 *ngFor="let dm of danhmuc">{{dm.name}}</h2>
+      <!--*************Content row*****************-->
+      <div id="row_content">
+        <div *ngFor="let dm of danhmuc" id="route">Tin tuc > {{dm.name}}</div>
+        <div id="bound">
+          <div *ngFor="let tin of tintuc | paginate: { itemsPerPage: 4, currentPage: p}" class="news">
+            <div class="news_detail_image"><img src="data:image/jpg;base64,{{tin._source.thumbnail}}" alt=""></div>
+            <div class="news_content">
+              <div (click)="Nav(tin._source.id,tin._source.title)" class="news_detail_title"><h3>{{tin._source.title}}</h3></div>
+              <p>{{tin._source.shortbrief}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr id="last">
+      <div id="pagination">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>
+    <div id="content_right">
+      <menu-second></menu-second>
+      <circle></circle>
+    </div>
+  </div>
+</div>
+

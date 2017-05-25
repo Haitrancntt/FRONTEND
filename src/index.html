@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Van Lang Admission</title>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css" type="text/css">
+  <link rel="stylesheet" href="Slick_Slide/slick-theme.css" type="text/css">
+  <link rel="stylesheet" href="Slick_Slide/slick.css" type="text/css">
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
+  <!-- Polyfill(s) for older browsers -->
+  <script src="node_modules/core-js/client/shim.min.js"></script>
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+  <script src="Slick_Slide/systemjs.config.js"></script>
+  <script>
+    System.import('main.js').catch(function (err) {
+      console.error(err);
+    });
+
+  </script>
+</head>
+
+<body>
+<div id="wrapper">
+  <my-app>Loading AppComponent content here ...</my-app>
+</div>
+</body>
+</html>
+
+<script src="Slick_Slide/jquery-3.3.7.min.js"></script>
+<script src="Slick_Slide/bootstrap.min.js"></script>
+<script src="Slick_Slide/slick.min.js"></script>
+
+<script src="Slick_Slide/slick.js"></script>
+<script src="Slick_Slide/slack.min.js"></script>
+<script src="Slick_Slide/slack.js"></script>
+<script>
+  function sideopen() {
+    document.getElementById("my_sidebar").style.width = "100%";
+    document.getElementById("my_sidebar").style.display = "block";
+    document.getElementById("wrapper").style.backgroundColor = "rgba(0,0,0,0.4)";
+  }
+  function sideclose() {
+    document.getElementById("my_sidebar").style.width = "0";
+    document.getElementById("wrapper").style.backgroundColor = "#e9ebee";
+  }
+  function showMenu() {
+    document.getElementById("menu_hamburger_second_mobile").style.display = "inline-block";
+  }
+</script>

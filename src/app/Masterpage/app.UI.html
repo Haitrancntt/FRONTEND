@@ -1,0 +1,78 @@
+<!--Menu header****************-->
+<div id="header">
+  <div id="menu_header">
+    <div id="menu_header_fix">
+      <div class="menu_hamburger">
+        <div class="menu_hamburger_second" id="my_sidebar">
+          <button onclick="sideclose()" class="closebtn">&times;</button>
+          <!--  <li *ngFor="let cate of danhmuc" onclick="showMenu()">
+              <a>{{cate.name}}</a>
+              <div *ngIf="cate.child!=null" id="menu_hamburger_second_mobile">
+                <a *ngFor="let danhmucnho of cate.child;let i = index"
+                   (click)="Navigation(cate.child[i].link)">{{cate.child[i].name}}</a>
+              </div>
+            </li>-->
+          <!--***********************-->
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default" *ngFor="let cate of danhmuc">
+              <div class="panel-heading" data-toggle="collapse" data-parent="#accordion"
+                   [attr.href]="'#' + cate._id">
+                <h4 class="panel-title">
+                  <a>{{cate.name}}</a>
+                </h4>
+              </div>
+              <div *ngIf="cate.child!=null" id="{{cate._id}}"
+                   class="panel-collapse collapse menu_hamburger_second_mobile">
+                <div *ngFor="let danhmucnho of cate.child;let i = index" class="panel-body">
+                  <h4 class="panel-title" *ngIf="danhmucnho.active">
+                    <a>{{cate.child[i].name}} </a>
+                  </h4>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!--***********************-->
+        </div>
+        <button onclick="sideopen()">☰</button>
+
+      </div>
+      <ul class="menu_ux">
+        <li><a routerLink="/trangnguoidung">Thí sinh/Phụ huynh</a></li>
+        <li><a routerLink="/trangnguoidung">Sinh viên</a></li>
+        <li><a routerLink="/trangnguoidung">Nhân viên/Giảng viên</a></li>
+        <li><a routerLink="/trangnguoidung">Cựu sinh viên</a></li>
+        <li><a routerLink="/trangnguoidung">Cộng đồng</a></li>
+      </ul>
+      <div id="menu_header_fix_search">
+        <input type="text" placeholder="Enter search term">
+        <img src="../../Image/ic_search.png" alt="">
+      </div>
+    </div>
+  </div>
+  <!--Menu body******************-->
+  <div id="menu_body">
+    <div id="menu_body_fix">
+      <div id="logo"><img src="/Image/logo_vanlang.png" routerLink="/"/></div>
+      <div id="slogan"></div>
+      <div id="menu_second">
+        <ul>
+          <li class="dropdown_li" *ngFor="let cate of danhmuc">
+            <a class="dropbtn" (click)="Navigation(cate.link)" routerLink="{{cate.link}}">{{cate.name}}</a>
+            <div *ngIf="cate.child!=null" class="dropdown-content">
+              <div *ngFor="let danhmucnho of cate.child;let i=index">
+                <a *ngIf="danhmucnho.active" (click)="Navigation(cate.link)">{{cate.child[i].name}}</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="wrapper_bound">
+  <router-outlet></router-outlet>
+  <footer></footer>
+</div>
+
+
